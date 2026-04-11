@@ -2,26 +2,214 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Design Tokens ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --blank: #FFFFFF;
+  --silk-rose: #f9ebec;
+  --cotton: #ffcad4;
+  --solaris: #ff8979;
+  --trufflet: #927057;
+  --gold: #D4AF37;
+  --midnight: #072331;
+
+  /* Opacity Variants */
+  --silk-rose-50: rgba(249, 235, 236, 0.5);
+  --silk-rose-15: rgba(249, 235, 236, 0.15);
+  --cotton-50: rgba(255, 202, 212, 0.5);
+  --cotton-15: rgba(255, 202, 212, 0.15);
+  --solaris-50: rgba(255, 137, 121, 0.5);
+  --solaris-15: rgba(255, 137, 121, 0.15);
+  --gold-50: rgba(212, 175, 55, 0.5);
+  --gold-15: rgba(212, 175, 55, 0.15);
+  --midnight-50: rgba(7, 35, 49, 0.5);
+  --midnight-15: rgba(7, 35, 49, 0.15);
+
+  /* Semantic Tokens */
+  --background: var(--blank);
+  --background-warm: var(--silk-rose);
+  --foreground: var(--midnight);
+  --foreground-muted: var(--trufflet);
+  --accent-primary: var(--gold);
+  --accent-secondary: var(--solaris);
+  --accent-soft: var(--cotton);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-gold/30 text-midnight;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Component Layer ===== */
+@layer components {
+  /* Typography components */
+  .typography-display {
+    @apply font-serif text-display text-foreground;
+  }
+
+  .typography-h1 {
+    @apply font-serif text-h1 text-foreground;
+  }
+
+  .typography-h2 {
+    @apply font-serif text-h2 text-foreground;
+  }
+
+  .typography-h3 {
+    @apply font-serif text-h3 text-foreground;
+  }
+
+  .typography-h4 {
+    @apply font-sans text-h4 text-foreground uppercase tracking-wider;
+  }
+
+  .typography-body {
+    @apply font-sans text-base leading-relaxed text-foreground;
+  }
+
+  .typography-body-muted {
+    @apply font-sans text-base leading-relaxed text-foreground-muted;
+  }
+
+  .typography-small {
+    @apply font-sans text-sm leading-relaxed text-foreground-muted;
+  }
+
+  .typography-caption {
+    @apply font-sans text-xs text-foreground-muted uppercase tracking-widest font-medium;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-sans font-medium text-base
+           transition-all duration-300 ease-luxe cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-solaris text-white rounded-full
+           hover:shadow-gold-glow hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-soft;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-midnight border-2 border-midnight rounded-full
+           hover:bg-midnight hover:text-white
+           active:bg-midnight/90;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-midnight px-0 py-2 relative
+           after:absolute after:bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gold
+           after:transition-all after:duration-300 after:ease-luxe
+           hover:after:w-full;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-white rounded-full
+           hover:shadow-gold-glow-lg hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white rounded-2xl overflow-hidden transition-all duration-400 ease-luxe;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-1 hover:shadow-lift;
+  }
+
+  /* Section base */
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Container */
+  .container-luxe {
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Link with gold underline */
+  .link-gold {
+    @apply relative text-foreground
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold
+           after:transition-all after:duration-300 after:ease-luxe
+           hover:after:w-full;
+  }
+
+  /* Image zoom on hover */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-zoom img {
+    @apply transition-transform duration-500 ease-luxe;
+  }
+
+  .img-zoom:hover img {
+    @apply scale-[1.02];
+  }
 }
 
+/* ===== Utilities ===== */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Gold gradient text */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-[#e8c547] to-gold bg-clip-text text-transparent;
+  }
+
+  /* Fade in animation trigger */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-5;
+  }
+
+  .animate-on-scroll.visible {
+    @apply animate-fade-up;
+  }
+
+  /* Gold shimmer effect */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      var(--gold) 0%,
+      #e8c547 50%,
+      var(--gold) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Subtle parallax helper */
+  .parallax-slow {
+    will-change: transform;
   }
 }
