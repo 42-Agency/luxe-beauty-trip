@@ -26,28 +26,29 @@ const defaultColumns: FooterColumn[] = [
   {
     title: "Treatments",
     links: [
-      { label: "Signature Facials", href: "#" },
-      { label: "Korean Glass Skin", href: "#" },
-      { label: "Rejuvenation", href: "#" },
-      { label: "Body Treatments", href: "#" },
+      { label: "All Treatments", href: "/treatments" },
+      { label: "Korean Glass Skin", href: "/treatments/korean-glass-skin-facial" },
+      { label: "Rejuran Healer", href: "/treatments/rejuran-healer" },
+      { label: "Thread Lift", href: "/treatments/thread-lift" },
+      { label: "V-Line Contouring", href: "/treatments/v-line-facial-contouring" },
     ],
   },
   {
-    title: "About",
+    title: "Company",
     links: [
-      { label: "Our Story", href: "#" },
-      { label: "The Team", href: "#" },
-      { label: "Press", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "About Us", href: "/about" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Partner Clinics", href: "/clinics" },
+      { label: "Press & Media", href: "/press" },
     ],
   },
   {
-    title: "Support",
+    title: "Resources",
     links: [
-      { label: "Contact", href: "#" },
-      { label: "FAQs", href: "#" },
-      { label: "Booking Policy", href: "#" },
-      { label: "Gift Cards", href: "#" },
+      { label: "Packages & Pricing", href: "/packages" },
+      { label: "Results Gallery", href: "/gallery" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];

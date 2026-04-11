@@ -365,6 +365,121 @@ export const treatments: Treatment[] = [
       },
     ],
   },
+  {
+    slug: "hydrafacial-korean-style",
+    title: "Hydrafacial Korean Style",
+    subtitle: "Medical-grade deep cleansing",
+    description:
+      "The classic Hydrafacial, enhanced with Korean techniques and premium serums. Deep cleansing, exfoliation, extraction, and hydration—perfected for the ultimate glow.",
+    longDescription:
+      "The Hydrafacial has become a global phenomenon, but Korean clinics have elevated it to an art form. The Korean-style Hydrafacial takes the patented vortex-fusion technology and enhances it with premium Korean serums, extended treatment protocols, and complementary modalities that maximize results.\n\nThe treatment uses a specialized device that simultaneously cleanses, exfoliates, extracts, and infuses the skin with nourishing serums. Korean practitioners have refined this process with additional steps: LED therapy for enhanced absorption, oxygen infusion for brightening, and custom serum cocktails featuring ingredients like centella asiatica, snail mucin, and propolis.\n\nWhat sets the Korean approach apart is the attention to pore care. After the Hydrafacial extraction, Korean aestheticians perform manual extractions for stubborn blackheads, followed by pore-tightening treatments. The result is skin that's not just hydrated but truly refined—clean pores, even texture, and that signature K-beauty glow.",
+    benefits: [
+      "Deep pore cleansing and extraction",
+      "Instant hydration and radiance",
+      "Improved skin texture",
+      "Minimized pore appearance",
+      "No downtime",
+      "Safe for all skin types",
+    ],
+    procedure: {
+      duration: "60-90 minutes",
+      downtime: "None",
+      sessions: "Monthly maintenance recommended",
+      results: "Immediate glow",
+    },
+    idealFor: [
+      "Congested pores and blackheads",
+      "Dull, tired skin",
+      "Pre-event preparation",
+      "Regular skin maintenance",
+      "All skin types including sensitive",
+    ],
+    price: {
+      range: "$250 - $450",
+      note: "Per session. Add-ons available.",
+    },
+    image:
+      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&h=1000&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      {
+        question: "How is this different from a regular Hydrafacial?",
+        answer:
+          "Korean clinics extend the treatment time, use premium Korean serums, add manual extractions for stubborn congestion, and include LED therapy and oxygen infusion not typically offered elsewhere.",
+      },
+      {
+        question: "How often should I get this treatment?",
+        answer:
+          "For maintenance, monthly sessions are ideal. If you're addressing specific concerns like congestion, bi-weekly sessions for a course of 4-6 treatments work well.",
+      },
+      {
+        question: "Can I wear makeup after?",
+        answer:
+          "Yes, you can apply makeup immediately after if needed. However, your skin will look so good you may not want to cover it up!",
+      },
+    ],
+  },
+  {
+    slug: "v-line-facial-contouring",
+    title: "V-Line Facial Contouring",
+    subtitle: "Non-surgical jawline definition",
+    description:
+      "Achieve the coveted Korean 'V-line' without surgery. This combination of injectables and technologies slims the lower face for a more defined, elegant jawline.",
+    longDescription:
+      "The 'V-line' face—a slim, tapered jawline that creates a heart-shaped face—is one of the most sought-after beauty ideals in Korea. While surgery remains an option, Korean clinics have perfected non-surgical approaches that can dramatically improve facial contours without going under the knife.\n\nV-Line Facial Contouring typically combines multiple modalities: Botox injections into the masseter muscles to slim a wide jaw, fat-dissolving injections (like Kybella or Korean alternatives) for submental fullness, HIFU (High-Intensity Focused Ultrasound) for skin tightening, and strategically placed threads for lifting.\n\nThe approach is highly customized based on your facial anatomy. Some clients need primarily masseter reduction, while others benefit more from fat dissolution or lifting. Korean practitioners excel at analyzing facial structure and creating protocols that enhance your natural features rather than creating a cookie-cutter result.\n\nResults develop gradually over 4-8 weeks as muscles relax and fat cells are eliminated. The effect is subtle but transformative—a more refined, elegant facial profile that photographs beautifully from every angle.",
+    benefits: [
+      "Slimmer jawline and lower face",
+      "Reduced masseter muscle bulk",
+      "Defined chin and neck contour",
+      "Natural-looking results",
+      "Non-surgical approach",
+      "Gradual, subtle transformation",
+    ],
+    procedure: {
+      duration: "60-90 minutes",
+      downtime: "1-3 days (minor swelling)",
+      sessions: "1-3 sessions depending on goals",
+      results: "Visible at 4-8 weeks",
+    },
+    idealFor: [
+      "Wide or square jawline",
+      "Teeth grinding (bruxism) causing jaw enlargement",
+      "Submental fullness (double chin)",
+      "Those wanting facial refinement without surgery",
+    ],
+    price: {
+      range: "$800 - $2,500",
+      note: "Varies by treatment combination.",
+    },
+    image:
+      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      {
+        question: "Will I look different or unnatural?",
+        answer:
+          "The goal is refinement, not transformation. Results are subtle and enhance your natural features. Friends will notice you look great but won't be able to pinpoint why.",
+      },
+      {
+        question: "Does masseter Botox affect chewing?",
+        answer:
+          "You may notice slight weakness when chewing tough foods for the first 2 weeks. This resolves quickly, and most clients don't notice any functional changes.",
+      },
+      {
+        question: "How long do results last?",
+        answer:
+          "Masseter Botox lasts 4-6 months. Fat-dissolving treatments are permanent once the fat cells are eliminated. HIFU and threads last 1-2 years.",
+      },
+    ],
+  },
 ];
 
 export function getTreatmentBySlug(slug: string): Treatment | undefined {

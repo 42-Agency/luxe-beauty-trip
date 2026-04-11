@@ -19,16 +19,17 @@ interface HeaderProps {
 }
 
 const defaultNavItems: NavItem[] = [
-  { label: "Treatments", href: "#treatments" },
-  { label: "Experience", href: "#experience" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Treatments", href: "/treatments" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Packages", href: "/packages" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
 ];
 
 export function Header({
   navItems = defaultNavItems,
   ctaText = "Book Now",
-  ctaHref = "#book",
+  ctaHref = "/contact",
   className,
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
