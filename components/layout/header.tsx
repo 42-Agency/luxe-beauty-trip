@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./container";
 import { Button } from "../ui/button";
 
@@ -58,9 +59,13 @@ export function Header({
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <span className="font-serif text-2xl text-foreground tracking-tight">
-              Luxe<span className="text-gold">.</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Luxe Beauty Trip"
+              width={50}
+              height={50}
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     siteName: "Luxe Beauty Trip",
     images: [
       {
-        url: "https://luxe-beauty-trip.vercel.app/og-image.jpg",
+        url: "https://luxe-beauty-trip.vercel.app/logo.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Luxe Beauty Trip - Premium Korean Beauty Treatments",
       },
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Luxe Beauty Trip | Premium Korean Beauty Treatments",
     description:
       "Where Korean beauty expertise meets luxury travel. Experience transformative treatments in Seoul's most exclusive destinations.",
-    images: ["https://luxe-beauty-trip.vercel.app/og-image.jpg"],
+    images: ["https://luxe-beauty-trip.vercel.app/logo.png"],
   },
 };
 

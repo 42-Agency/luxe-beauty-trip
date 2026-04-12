@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./container";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -66,9 +67,13 @@ export function Footer({
           {/* Brand & Newsletter */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-3xl text-white tracking-tight">
-                Luxe<span className="text-gold">.</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Luxe Beauty Trip"
+                width={80}
+                height={80}
+                className="h-20 w-auto"
+              />
             </Link>
             <Text className="text-gray-400 mb-8 max-w-sm">
               Where Korean beauty expertise meets luxury travel. Experience transformative treatments in Seoul&apos;s most exclusive destinations.
