@@ -23,21 +23,18 @@ const treatments = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=750&fit=crop",
     title: "Korean Glass Skin",
     subtitle: "Multi-step hydration ritual",
-    price: "From $350",
   },
   {
     id: "2",
     image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=750&fit=crop",
     title: "Rejuvenation Therapy",
     subtitle: "Advanced skin renewal",
-    price: "From $500",
   },
   {
     id: "3",
     image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=750&fit=crop",
     title: "Luxe Signature Facial",
     subtitle: "Our most popular treatment",
-    price: "From $275",
   },
 ];
 

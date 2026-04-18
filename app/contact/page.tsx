@@ -31,14 +31,6 @@ const timeframeOptions = [
   { value: "flexible", label: "Flexible / Just exploring" },
 ];
 
-const budgetOptions = [
-  { value: "5-10k", label: "$5,000 - $10,000" },
-  { value: "10-15k", label: "$10,000 - $15,000" },
-  { value: "15-25k", label: "$15,000 - $25,000" },
-  { value: "25k-plus", label: "$25,000+" },
-  { value: "unsure", label: "Not sure yet" },
-];
-
 const hearAboutOptions = [
   { value: "google", label: "Google Search" },
   { value: "instagram", label: "Instagram" },
@@ -129,18 +121,11 @@ export default function ContactPage() {
                   required
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Select
-                    label="Preferred Timeframe"
-                    options={timeframeOptions}
-                    placeholder="When are you looking to travel?"
-                  />
-                  <Select
-                    label="Budget Range"
-                    options={budgetOptions}
-                    placeholder="Select budget range"
-                  />
-                </div>
+                <Select
+                  label="Preferred Timeframe"
+                  options={timeframeOptions}
+                  placeholder="When are you looking to travel?"
+                />
 
                 <Textarea
                   label="Tell Us About Your Goals"
@@ -185,7 +170,7 @@ export default function ContactPage() {
                   "30-minute video consultation",
                   "Personalized skin analysis",
                   "Custom treatment recommendations",
-                  "Detailed cost breakdown",
+                  "Tailored package proposal",
                   "No obligation to book",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">

@@ -131,16 +131,6 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               </div>
             </div>
 
-            {/* Price */}
-            <div className="mt-8 bg-midnight rounded-2xl p-8 text-white">
-              <Label className="mb-2 block text-gold">Investment</Label>
-              <Display className="text-white text-3xl mb-2">
-                {treatment.price.range}
-              </Display>
-              <Text size="small" className="text-white/70">
-                {treatment.price.note}
-              </Text>
-            </div>
           </div>
         </div>
       </Section>

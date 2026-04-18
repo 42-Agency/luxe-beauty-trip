@@ -237,10 +237,10 @@ export default function FAQPage() {
               </svg>
             </div>
             <Heading level={3} className="text-xl mb-2">
-              Packages & Pricing
+              Our Packages
             </Heading>
             <Text size="small" muted>
-              View our transparent pricing and package options.
+              Explore our curated package options and inclusions.
             </Text>
           </Link>
 

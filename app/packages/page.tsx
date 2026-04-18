@@ -51,9 +51,9 @@ export default function PackagesPage() {
 
       {/* Hero */}
       <HeroMinimal
-        label="Pricing & Packages"
-        title="Investment in Your Transformation"
-        subtitle="Transparent pricing for an extraordinary experience. Every package is fully customizable to your unique needs and goals."
+        label="Our Packages"
+        title="Journeys Designed Around You"
+        subtitle="Three curated experiences, each fully customizable to your unique goals. Request a consultation for a tailored quote."
         align="center"
       />
 
@@ -82,14 +82,8 @@ export default function PackagesPage() {
                   <Heading level={2} className="mb-2">
                     {pkg.name}
                   </Heading>
-                  <Text muted className="mb-4">
+                  <Text muted>
                     {pkg.tagline}
-                  </Text>
-                  <div className="font-serif text-3xl text-gold mb-1">
-                    {pkg.priceRange}
-                  </div>
-                  <Text size="small" muted>
-                    {pkg.priceNote}
                   </Text>
                 </div>
 
@@ -283,10 +277,7 @@ export default function PackagesPage() {
                 .filter((a) => a.category === "treatment")
                 .map((addon) => (
                   <div key={addon.name} className="bg-silk-rose rounded-xl p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <Text className="font-medium">{addon.name}</Text>
-                      <Text className="text-gold font-medium text-sm">{addon.price}</Text>
-                    </div>
+                    <Text className="font-medium mb-2">{addon.name}</Text>
                     <Text size="small" muted>
                       {addon.description}
                     </Text>
@@ -310,10 +301,7 @@ export default function PackagesPage() {
                 .filter((a) => a.category === "travel")
                 .map((addon) => (
                   <div key={addon.name} className="bg-silk-rose rounded-xl p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <Text className="font-medium">{addon.name}</Text>
-                      <Text className="text-gold font-medium text-sm">{addon.price}</Text>
-                    </div>
+                    <Text className="font-medium mb-2">{addon.name}</Text>
                     <Text size="small" muted>
                       {addon.description}
                     </Text>
@@ -337,10 +325,7 @@ export default function PackagesPage() {
                 .filter((a) => a.category === "experience")
                 .map((addon) => (
                   <div key={addon.name} className="bg-silk-rose rounded-xl p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <Text className="font-medium">{addon.name}</Text>
-                      <Text className="text-gold font-medium text-sm">{addon.price}</Text>
-                    </div>
+                    <Text className="font-medium mb-2">{addon.name}</Text>
                     <Text size="small" muted>
                       {addon.description}
                     </Text>

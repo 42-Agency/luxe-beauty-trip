@@ -50,9 +50,6 @@ export default function TreatmentsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <Text className="text-gold font-medium mb-1">
-                      {treatment.price.range}
-                    </Text>
                     <Heading level={3} className="text-xl text-white mb-2">
                       {treatment.title}
                     </Heading>

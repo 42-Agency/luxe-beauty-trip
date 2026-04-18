@@ -112,7 +112,7 @@ export const faqCategories: FAQCategory[] = [
       {
         question: "What's your cancellation policy?",
         answer:
-          "Cancellations 30+ days before departure receive a full refund minus a $500 admin fee. 14-30 days: 50% refund. Within 14 days: credit toward a future trip. Travel insurance (included in Signature and Luxe packages) covers emergency cancellations.",
+          "Cancellations 30+ days before departure receive a full refund minus a modest admin fee. 14-30 days: 50% refund. Within 14 days: credit toward a future trip. Travel insurance (included in Signature and Luxe packages) covers emergency cancellations.",
       },
       {
         question: "Are there any hidden fees?",
@@ -122,7 +122,7 @@ export const faqCategories: FAQCategory[] = [
       {
         question: "Do you offer payment plans?",
         answer:
-          "Yes, for packages over $10,000 we offer payment plans with 3-4 installments. This must be arranged at least 60 days before departure so all payments are complete before your trip.",
+          "Yes, for larger packages we offer payment plans with 3-4 installments. This must be arranged at least 60 days before departure so all payments are complete before your trip.",
       },
     ],
   },

@@ -61,7 +61,6 @@ export default async function CityPage({ params }: CityPageProps) {
     image: t.image,
     title: t.title,
     subtitle: t.subtitle,
-    price: t.price.range,
   }));
 
   return (
