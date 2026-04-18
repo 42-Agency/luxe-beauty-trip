@@ -1,5 +1,14 @@
 # Luxe Beauty Trip
 
+## Current State (as of 2026-04-18)
+
+- **Repo:** github.com/42-Agency/luxe-beauty-trip
+- **Production:** https://www.luxebeautytrip.com (auto-deploys from `main` via Vercel)
+- **Pricing is intentionally hidden across the UI** — actual prices haven't been finalized yet. The placeholder `$` amounts still live in `lib/data/treatments.ts` and `lib/data/packages.ts` but are not rendered anywhere. When real prices are ready, add the fields back into the JSX (home cards, treatment list/detail, packages page, contact budget selector) rather than re-inventing copy.
+- **Contact form** has no budget selector (removed with pricing). Re-add it from `app/contact/page.tsx` git history if needed.
+
+---
+
 ## Business Context
 
 **What it is:** Lead generation for Korean skincare/dermatology clinics, wrapped in a luxury travel experience.
