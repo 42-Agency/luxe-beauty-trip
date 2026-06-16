@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Header, Footer, Section } from "@/components/layout";
-import { Heading, Text, Label, Display } from "@/components/ui";
+import { Heading, Text, Label } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "How to Plan a K-Beauty Trip to Seoul — Part One | Luxe Beauty Trip",
