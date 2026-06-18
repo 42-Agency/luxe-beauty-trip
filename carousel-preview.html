@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Preview — Luxe Beauty Trip</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f0ede9;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px;
+      gap: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #1C3A4A;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: #999;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    /* Carousel strip */
+    .carousel-strip {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      max-width: 100%;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel-strip::-webkit-scrollbar { height: 4px; }
+    .carousel-strip::-webkit-scrollbar-thumb { background: #D4837A; border-radius: 2px; }
+
+    /* Each slide — Instagram square 1:1 */
+    .slide {
+      flex-shrink: 0;
+      width: 360px;
+      height: 360px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px 28px;
+    }
+
+    /* Slide number badge */
+    .slide-num {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+    }
+
+    /* Logo badge */
+    .logo-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* ── SLIDE 1 — Cover ── */
+    .slide-1 {
+      background: #1C3A4A;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 32px;
+    }
+    .slide-1 .logo-badge { color: rgba(255,255,255,0.4); }
+    .slide-1 .slide-num { color: rgba(255,255,255,0.4); }
+    .slide-1 .tag {
+      display: inline-block;
+      background: rgba(212,131,122,0.2);
+      border: 1px solid rgba(212,131,122,0.5);
+      color: #D4837A;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .slide-1 h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slide-1 p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .slide-1 .swipe {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SLIDES 2–5 — Treatment ── */
+    .slide-treatment {
+      background: #fff;
+      justify-content: flex-start;
+      padding: 0;
+    }
+    .slide-treatment .treatment-top {
+      background: #1C3A4A;
+      padding: 28px 28px 22px;
+      flex-shrink: 0;
+    }
+    .slide-treatment .treatment-top .slide-num { color: rgba(255,255,255,0.35); }
+    .slide-treatment .treatment-top .logo-badge { color: rgba(255,255,255,0.35); }
+    .slide-treatment .treatment-label {
+      display: inline-block;
+      background: rgba(212,131,122,0.2);
+      border: 1px solid rgba(212,131,122,0.45);
+      color: #D4837A;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+    .slide-treatment .treatment-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.25;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slide-treatment .treatment-body {
+      padding: 22px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .slide-treatment .treatment-desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .slide-treatment .treatment-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fdf9f8;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: #1C3A4A;
+      margin-top: 16px;
+      width: fit-content;
+    }
+    .slide-treatment .treatment-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #D4837A;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── SLIDE 6 — CTA ── */
+    .slide-cta {
+      background: #D4837A;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 32px;
+    }
+    .slide-cta .logo-badge { color: rgba(255,255,255,0.5); }
+    .slide-cta .slide-num { color: rgba(255,255,255,0.4); }
+    .slide-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slide-cta p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+    .slide-cta .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #D4837A;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 11px 24px;
+      border-radius: 30px;
+    }
+
+    /* Stack view label */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      align-self: flex-start;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Carousel Preview — Educational Post</h1>
+  <p class="note">Scroll horizontally to see all 6 slides → Recreate in Canva at 1080×1080px</p>
+
+  <div class="carousel-strip">
+
+    <!-- SLIDE 1 — Cover -->
+    <div class="slide slide-1">
+      <span class="logo-badge">Luxe Beauty Trip</span>
+      <span class="slide-num">1 / 6</span>
+      <div class="tag">Seoul Clinic Guide</div>
+      <h2>5 Treatments You Can't Get at Your Local Med Spa</h2>
+      <p>But you can get every one of them in Seoul — at a fraction of the price.</p>
+      <span class="swipe">Swipe to see →</span>
+    </div>
+
+    <!-- SLIDE 2 — Rejuran -->
+    <div class="slide slide-treatment">
+      <div class="treatment-top">
+        <span class="logo-badge">Luxe Beauty Trip</span>
+        <span class="slide-num">2 / 6</span>
+        <div class="treatment-label">Korean Original</div>
+        <div class="treatment-name">Rejuran<br>PDRN Healer</div>
+      </div>
+      <div class="treatment-body">
+        <p class="treatment-desc">Polynucleotide injections that repair skin at a cellular level — rebuilding collagen, healing damage, and restoring texture from within. Widely used in Korea since 2014. Not available at US med spas.</p>
+        <div class="treatment-pill">Available in Seoul from ~$200 USD</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Ultherapy -->
+    <div class="slide slide-treatment">
+      <div class="treatment-top">
+        <span class="logo-badge">Luxe Beauty Trip</span>
+        <span class="slide-num">3 / 6</span>
+        <div class="treatment-label">Much Cheaper in Korea</div>
+        <div class="treatment-name">Ultherapy<br>Prime</div>
+      </div>
+      <div class="treatment-body">
+        <p class="treatment-desc">The gold standard in non-surgical lifting — targets the same deep tissue layer as a surgical facelift. $2,000–$4,500 in the US. $300–$600 in Seoul. Same device, same treatment, same results.</p>
+        <div class="treatment-pill">Save up to 80% vs US prices</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 — Exosome -->
+    <div class="slide slide-treatment">
+      <div class="treatment-top">
+        <span class="logo-badge">Luxe Beauty Trip</span>
+        <span class="slide-num">4 / 6</span>
+        <div class="treatment-label">Cutting Edge</div>
+        <div class="treatment-name">Exosome<br>Therapy</div>
+      </div>
+      <div class="treatment-body">
+        <p class="treatment-desc">A concentrated serum packed with growth factors and repair proteins — applied right after microneedling to dramatically accelerate healing and amplify results. Korean clinics have been using it for years. Most Western clinics don't offer it.</p>
+        <div class="treatment-pill">Added post-microneedling in Seoul</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 — Juvelook -->
+    <div class="slide slide-treatment">
+      <div class="treatment-top">
+        <span class="logo-badge">Luxe Beauty Trip</span>
+        <span class="slide-num">5 / 6</span>
+        <div class="treatment-label">Korean Original</div>
+        <div class="treatment-name">Juvelook<br>Bio-Stimulator</div>
+      </div>
+      <div class="treatment-body">
+        <p class="treatment-desc">Combines PDLLA microspheres with hyaluronic acid to trigger your skin to produce its own collagen — progressively, over months. Not a quick fix. Structural skin improvement that deepens long after the treatment. Not available in North America.</p>
+        <div class="treatment-pill">Results build over 3–6 months</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 — CTA -->
+    <div class="slide slide-cta">
+      <span class="logo-badge">Luxe Beauty Trip</span>
+      <span class="slide-num">6 / 6</span>
+      <h2>All of These Are on Our Seoul Group Trip</h2>
+      <p>6 days. Every clinic vetted by our RN. All logistics handled. You just book your flight.</p>
+      <div class="cta-btn">Join the Waitlist</div>
+    </div>
+
+  </div>
+
+  <p class="note" style="margin-top: 8px;">Canva size: 1080 × 1080 px &nbsp;·&nbsp; Fonts: Playfair Display (headings) + Poppins (body) &nbsp;·&nbsp; Colors: Navy #1C3A4A · Rose #D4837A · White #FFFFFF</p>
+
+</body>
+</html>
